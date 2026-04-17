@@ -1,0 +1,175 @@
+# Bali-travel-english
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>峇里島旅遊英文學習 Pro (具體對話版)</title>
+    <style>
+        :root {
+            --bali-gold: #d4af37;
+            --bali-green: #1b4332;
+            --ocean-blue: #0077b6;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'PingFang TC', 'Heiti TC', sans-serif;
+            background-color: var(--light-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border-top: 8px solid var(--bali-green);
+        }
+        .nav-buttons {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+            max-width: 500px;
+        }
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--bali-green);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover { background-color: var(--bali-gold); }
+        .control-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+        .action-btn {
+            background-color: #eee;
+            color: #333;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+        }
+        .vocab-box {
+            background: #f0f4f0;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: left;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        #english-text { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--bali-green); min-height: 3em; }
+        #chinese-text { color: #666; margin-bottom: 15px; min-height: 1.5em; }
+        .counter { font-size: 0.8rem; color: #999; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>🌴 Bali Trip Expert</h1>
+
+    <div class="card">
+        <h2 id="category-title">點選按鈕開始學習</h2>
+        
+        <div class="vocab-box" id="vocab-display">
+            選擇下方分類，學習更具體的峇里島旅遊對話。
+        </div>
+
+        <div id="english-text">Are you ready for your Bali adventure?</div>
+        <div id="chinese-text">準備好開始你的峇里島冒險了嗎？</div>
+        <div class="counter" id="counter-display"></div>
+
+        <div class="control-btns">
+            <button class="action-btn" onclick="speak()">🔊 發音</button>
+            <button class="action-btn" onclick="nextPhrase()">➡️ 下一組</button>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button onclick="startCategory('charter')">🚐 包車交通</button>
+        <button onclick="startCategory('attractions')">🗺️ 熱門景點</button>
+        <button onclick="startCategory('food')">🍴 推薦美食</button>
+        <button onclick="startCategory('hotel')">🏨 飯店日常</button>
+    </div>
+
+    <script>
+        const studyData = {
+            charter: [
+                { en: "How much do you charge for a 10-hour full-day charter?", zh: "包車 10 小時怎麼收費？" },
+                { en: "Does the price include petrol, parking fees, and the driver's meal?", zh: "價格包含油錢、停車費和司機餐費嗎？" },
+                { en: "What is the extra charge per hour if we exceed the time limit?", zh: "如果超時，每小時額外費用是多少？" },
+                { en: "Could you pick us up at the lobby tomorrow at 9 AM?", zh: "明天早上 9 點可以到大廳接我們嗎？" }
+            ],
+            attractions: [
+                { en: "I want to see the sunrise at Mount Batur, what time should we start?", zh: "我想去巴度爾火山看日出，我們該幾點出發？" },
+                { en: "How much is the entrance fee for Tanah Lot Temple?", zh: "海神廟的門票是多少錢？" },
+                { en: "Where is the best spot to take photos of Tegalalang Rice Terrace?", zh: "德格拉朗梯田最適合拍照的地點在哪裡？" },
+                { en: "Is there a traditional dance performance at Ubud Palace tonight?", zh: "今晚烏布皇宮有傳統舞蹈表演嗎？" },
+                { en: "Can we swim at Suwat Waterfall?", zh: "我們可以在蘇瓦瀑布游泳嗎？" }
+            ],
+            food: [
+                { en: "Do you have any recommendations for authentic local food nearby?", zh: "這附近有推薦任何道地的在地美食嗎？" },
+                { en: "Is this dish very spicy? Can you make it less spicy, please?", zh: "這道菜很辣嗎？可以幫我做不辣（微辣）嗎？" },
+                { en: "I'd like to try Nasi Campur and Satay Lilit.", zh: "我想嘗試峇里島什錦飯和沙嗲。" },
+                { en: "What are the signature dishes of this restaurant?", zh: "這間餐廳的招牌菜是什麼？" }
+            ],
+            hotel: [
+                { en: "Can I leave my luggage here until we return from the tour?", zh: "我可以把行李寄放在這，直到我們行程結束回來嗎？" },
+                { en: "Is there a shuttle bus to the Ubud center?", zh: "有接駁車去烏布市中心嗎？" },
+                { en: "Could you help me call a taxi or a Grab car?", zh: "能幫我叫計程車或 Grab 嗎？" }
+            ]
+        };
+
+        let currentCategory = [];
+        let currentIndex = 0;
+
+        function startCategory(key) {
+            currentCategory = studyData[key];
+            currentIndex = 0;
+            const titles = { charter: "🚐 包車對話", attractions: "🗺️ 熱門景點", food: "🍴 推薦美食", hotel: "🏨 飯店日常" };
+            document.getElementById('category-title').innerText = titles[key];
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            if (currentCategory.length === 0) return;
+            const item = currentCategory[currentIndex];
+            document.getElementById('english-text').innerText = item.en;
+            document.getElementById('chinese-text').innerText = item.zh;
+            document.getElementById('counter-display').innerText = `進度：${currentIndex + 1} / ${currentCategory.length}`;
+            
+            // 更新核心單字提示 (簡單顯示當前重點單字)
+            const words = item.en.split(' ').slice(0, 3).join(', ');
+            document.getElementById('vocab-display').innerHTML = `<strong>本句重點：</strong> ${item.en.match(/\b[A-Z][a-z]+|entrance|charge|recommendation\b/g)?.join(', ') || '常用對話'}`;
+        }
+
+        function nextPhrase() {
+            if (currentCategory.length === 0) return;
+            currentIndex = (currentIndex + 1) % currentCategory.length;
+            updateDisplay();
+        }
+
+        function speak() {
+            const text = document.getElementById('english-text').innerText;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.9;
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+
+</body>
+</html>
