@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>撜���雀���𡃏㘚���飛蝧� Pro (�琿�𥪜�滩店���)</title>
+    <title>峇里島旅遊英文學習 Pro (具體對話版)</title>
     <style>
         :root {
             --bali-gold: #d4af37;
@@ -78,98 +78,98 @@
 </head>
 <body>
 
-    <h1>��繬 Bali Trip Expert</h1>
+    <h1>🌴 Bali Trip Expert</h1>
 
     <div class="card">
-        <h2 id="category-title">暺鮋�豢�厰�閖�见�见飛蝧�</h2>
+        <h2 id="category-title">點選按鈕開始學習</h2>
         
         <div class="vocab-box" id="vocab-display">
-            �豢���𧢲䲮��憿痹��飛蝧埝凒�琿�𠉛�撜���雀���𠰴�滩店��
+            選擇下方分類，學習更具體的峇里島旅遊對話。
         </div>
 
         <div id="english-text">Are you ready for your Bali adventure?</div>
-        <div id="chinese-text">皞硋�坔末��见�衤�删�撜���雀�㘾麬鈭���𠬍��</div>
+        <div id="chinese-text">準備好開始你的峇里島冒險了嗎？</div>
         <div class="counter" id="counter-display"></div>
 
         <div class="control-btns">
-            <button class="action-btn" onclick="speak()">���� �䔄�𨺗</button>
-            <button class="action-btn" onclick="nextPhrase()">�鱝儭� 銝衤�蝯�</button>
+            <button class="action-btn" onclick="speak()">🔊 發音</button>
+            <button class="action-btn" onclick="nextPhrase()">➡️ 下一組</button>
         </div>
     </div>
 
     <div class="nav-buttons">
-        <button onclick="startCategory('charter')">���� 鈭日�𡁻�贝撓</button>
-        <button onclick="startCategory('attractions')">��㚰儭� �艶暺噼頃��</button>
-        <button onclick="startCategory('food')">��㭂 �綫�㵽蝢𡡞��</button>
-        <button onclick="startCategory('hotel')">��䕫 憌臬�埈𠯫撣�</button>
+        <button onclick="startCategory('charter')">🚐 交通運輸</button>
+        <button onclick="startCategory('attractions')">🗺️ 景點購物</button>
+        <button onclick="startCategory('food')">🍴 推薦美食</button>
+        <button onclick="startCategory('hotel')">🏨 飯店日常</button>
     </div>
 
     <script>
         const studyData = {
             charter: [
-                { en: "How much do you charge for a 10-hour full-day charter?", zh: "��頠� 10 撠𤩺��𡡞獐�𤣰鞎鳴��" },
-				{ en: "I have a transfer here.", zh: "��煾�閬��銁�躰ㄐ頧㗇�麄��" },
-				{ en: "I�羮 like to check in for my flight.", zh: "��烐�唾�颲衣��⏛�号�𥼚����" },
-				{ en: "I have one checked bag.", zh: "��烐�劐�隞嗆�㗛�贝�峕�汿��" },
-				{ en: "Where is the security check?", zh: "嚗��见�誩�㗇炎�銁�𪑛鋆∴����" },
-				{ en: "Please place your bag on the conveyor belt.", zh: "隢𧢲�𠰴����𦆮��頛賊��撣嗡�𨳍��" },
-				{ en: "This is my boarding pass.", zh: "�蹱糓��𤑳��蒈璈蠘�剹��" },
-				{ en: "I have a connecting flight to Bali.", zh: "��烐�劐��号憌𥕦�撜���雀��頧㗇�蠘⏛�号��" },
-				{ en: "I'm here for holiday.", zh: "��穃�睲�摨血���" },
-				{ en: "Which terminal should I go to?", zh: "��烐�㕑府��滚��𪑛銝��贝⏛撱���" },
-				{ en: "Is this the correct gate for my next flight?", zh: "�蹱糓��睲�衤�畾菔⏛�号���蒈璈罸���𠬍��" },
-                { en: "Does the price include petrol, parking fees, and the driver's meal?", zh: "�寞聢���鉄瘝寥椙���𡏭�𡃏祥���虬璈罸�鞱祥��𠬍��" },
-                { en: "What is the extra charge per hour if we exceed the time limit?", zh: "憒���𡏭���嚗峕�誩�𤩺�憿滚�𤥁祥�鍂�糓憭𡁜�𡢅��" },
-                { en: "Could you pick us up at the lobby tomorrow at 9 AM?", zh: "��𤾸予�𡟺銝� 9 暺𧼮虾隞亙�憭批輒�𦻖��穃�穃�𠬍��" },
-				{ en: "Can you take us to [place Name]?", zh: "�虾隞亙葆��穃�穃縧[�𧑐��䓞��𠬍��" },
-				{ en: "Is it easy to get a Grab around here? ", zh: "�䠷�餈穃末�㙈 Grab ��𠬍��" },
-				{ en: "Where can I find a taxi?  ?", zh: "�𪑛鋆∪虾隞交𨰹閮��贝�𠺪��" }
+                { en: "How much do you charge for a 10-hour full-day charter?", zh: "包車 10 小時怎麼收費？" },
+				{ en: "I have a transfer here.", zh: "我需要在這裡轉機。" },
+				{ en: "I’d like to check in for my flight.", zh: "我想要辦理航班報到。" },
+				{ en: "I have one checked bag.", zh: "我有一件托運行李。" },
+				{ en: "Where is the security check?", zh: "（請問安檢在哪裡？）" },
+				{ en: "Please place your bag on the conveyor belt.", zh: "請把包包放到輸送帶上。" },
+				{ en: "This is my boarding pass.", zh: "這是我的登機證。" },
+				{ en: "I have a connecting flight to Bali.", zh: "我有一班飛往峇里島的轉機航班。" },
+				{ en: "I'm here for holiday.", zh: "我們來度假的" },
+				{ en: "Which terminal should I go to?", zh: "我應該前往哪一個航廈？" },
+				{ en: "Is this the correct gate for my next flight?", zh: "這是我下一段航班的登機門嗎？" },
+                { en: "Does the price include petrol, parking fees, and the driver's meal?", zh: "價格包含油錢、停車費和司機餐費嗎？" },
+                { en: "What is the extra charge per hour if we exceed the time limit?", zh: "如果超時，每小時額外費用是多少？" },
+                { en: "Could you pick us up at the lobby tomorrow at 9 AM?", zh: "明天早上 9 點可以到大廳接我們嗎？" },
+				{ en: "Can you take us to [place Name]?", zh: "可以帶我們去[地名]嗎？" },
+				{ en: "Is it easy to get a Grab around here? ", zh: "這附近好叫 Grab 嗎？" },
+				{ en: "Where can I find a taxi?  ?", zh: "哪裡可以搭計程車？" }
 				
             ],
             attractions: [
-                { en: "I want to see the sunrise at Mount Batur.", zh: "��穃�烐�喳縧撌游漲���怠控��𧢲𠯫�枂��" },
-                { en: "How much is the entrance fee for Tanah Lot Temple?", zh: "瘚瑞�𧼮�毺���蟡冽糓憭𡁜�煾椙嚗�" },
-				{ en: "How much for a full day tour?", zh: "�㟲憭拙�舘汗憭𡁜�煾椙嚗�" }, 
-                { en: "Where is the best spot to take photos of Tegalalang Rice Terrace?", zh: "敺瑟聢��㗇�埈０�眎���拙���滨�抒��𧑐暺𧼮銁�𪑛鋆∴��" },
-                { en: "Is there a traditional dance performance at Ubud Palace tonight?", zh: "隞𦠜�𡁶�誩����悅��匧�喟絞��噼��”瞍𥪜�𠬍��" },
-                { en: "Can we swim at Suwat Waterfall?", zh: "��穃�穃虾隞亙銁���𣑐�穃�皜豢陶��𠬍��" },
-				{ en: "The size doesn�脌 fit.", zh: "撠箏站銝滚����" },
-				{ en: "Do you have a smaller / larger size?", zh: "雿䭾�匧�譍�暺痹�誩之銝�暺䂿�撠箏站��𠬍��" },
-				{ en: "Do you recommend any shopping centers here?", zh: "雿䭾綫�㵽�躰ㄐ��隞�暻潸頃��銝剖���𠬍��" },
-				{ en: "Are there any popular shopping malls around?", zh: "�䠷�餈烐�厩�梢���鞈潛����聦��𠬍��" },
-				{ en: "What are the best department stores in this city?", zh: "��餈烐�㕑�撣���𠬍��" },
-				{ en: "Is there a supermarket nearby?", zh: "�坔�见�𤾸���憟賜��蓡鞎典�砍虬�糓�𪑛��橒��" },
-				{ en: "No, I�联 just browsing.", zh: "瘝埝�㚁�峕�穃蘨�糓�偦�䜘��" },
-				{ en: "Is there a supermarket nearby?", zh: "��餈烐�㕑�撣���𠬍��" },
-				{ en: "Can I pay by credit card?", zh: "��穃虾隞亙�靽∠鍂�㨃��𠬍��" },
-				{ en: "Can I get a discount?", zh: "�虾隞交�𤘪�睃�𠬍����" }
+                { en: "I want to see the sunrise at Mount Batur.", zh: "我們想去巴度爾火山看日出。" },
+                { en: "How much is the entrance fee for Tanah Lot Temple?", zh: "海神廟的門票是多少錢？" },
+				{ en: "How much for a full day tour?", zh: "整天導覽多少錢？" }, 
+                { en: "Where is the best spot to take photos of Tegalalang Rice Terrace?", zh: "德格拉朗梯田最適合拍照的地點在哪裡？" },
+                { en: "Is there a traditional dance performance at Ubud Palace tonight?", zh: "今晚烏布皇宮有傳統舞蹈表演嗎？" },
+                { en: "Can we swim at Suwat Waterfall?", zh: "我們可以在蘇瓦瀑布游泳嗎？" },
+				{ en: "The size doesn’t fit.", zh: "尺寸不合。" },
+				{ en: "Do you have a smaller / larger size?", zh: "你有小一點／大一點的尺寸嗎？" },
+				{ en: "Do you recommend any shopping centers here?", zh: "你推薦這裡的什麼購物中心嗎？" },
+				{ en: "Are there any popular shopping malls around?", zh: "這附近有熱門的購物商場嗎？" },
+				{ en: "What are the best department stores in this city?", zh: "附近有超市嗎？" },
+				{ en: "Is there a supermarket nearby?", zh: "這個城市最好的百貨公司是哪間？" },
+				{ en: "No, I’m just browsing.", zh: "沒有，我只是逛逛。" },
+				{ en: "Is there a supermarket nearby?", zh: "附近有超市嗎？" },
+				{ en: "Can I pay by credit card?", zh: "我可以刷信用卡嗎？" },
+				{ en: "Can I get a discount?", zh: "可以打折嗎？？" }
             ],
             food: [
-                { en: "Do you have any recommendations for authentic local food nearby?", zh: "�䠷�餈烐�㗇綫�㵽隞颱�閖�枏𧑐���銁�𧑐蝢𡡞�笔�𠬍��" },
-				{ en: " We're walk-ins, so we'll take any available table.", zh: "��穃�烐�埝�厰�鞟�嚗峕�隞乩遙雿閧征雿漤�賢虾隞乓��"},
-				{ en: " We'd like a table for three by the window, please.", zh: "��穃�烐�唾�銝��钅�删�㛖�銝劐犖摨找�溻��"},
-				{ en: " May I see the menu, please?", zh: "��穃虾隞亦�衤�銝贝�𨅯鱓��𠬍��"},
-                { en: "Is this dish very spicy? Can you make it less spicy, please?", zh: "�䠷�栞�𨅯��麾��𠬍�笔虾隞亙鼠��穃�帋�滩麾嚗�凝颲��匧�𠬍��" },
-                { en: "I'd like to try Babi Guling  and Satay Lilit.", zh: "��烐�喳�𡑒岫撜���雀�支像鞊祇ㄞ��峕�坔𤦭��" },
-				{ en: "I would like to order the Babi Guling (suckling pig rice) and the Bebek Bengil (dirty duck).", zh: "��烐�唾�暺䂿�支像鞊祇ㄞ��屸�㘾捶憌胯��" },
-                { en: "What are the signature dishes of this restaurant?", zh: "�䠷�㯄�𣂼輒����𤤿�諹�𨀣糓隞�暻潘��" },
-				{ en: " A table for three, please.", zh: "��穃�睲�劐��"},
-				{ en: " What drink do you have available?", zh: "雿惩�烐�劐�暻潮ㄡ��辷��"},
-				{ en: " Can we pay separately for our orders?", zh: "��穃�穃虾隞亙�隞睃���擗鞾�𧼮�𠬍��"},
-				{ en: " What payment methods do you accept?", zh: "雿惩�烐𦻖��堒𪑛鈭𥕢�䀹狡�䲮撘𧶏��"},
-				{ en: "heck/Bill, please.", zh: "鞎瑕鱓" }
+                { en: "Do you have any recommendations for authentic local food nearby?", zh: "這附近有推薦任何道地的在地美食嗎？" },
+				{ en: " We're walk-ins, so we'll take any available table.", zh: "我們沒有預約，所以任何空位都可以。"},
+				{ en: " We'd like a table for three by the window, please.", zh: "我們想要一個靠窗的三人座位。"},
+				{ en: " May I see the menu, please?", zh: "我可以看一下菜單嗎？"},
+                { en: "Is this dish very spicy? Can you make it less spicy, please?", zh: "這道菜很辣嗎？可以幫我做不辣（微辣）嗎？" },
+                { en: "I'd like to try Babi Guling  and Satay Lilit.", zh: "我想嘗試峇里島烤乳豬飯和沙嗲。" },
+				{ en: "I would like to order the Babi Guling (suckling pig rice) and the Bebek Bengil (dirty duck).", zh: "我想要點烤乳豬飯和髒鴨飯。" },
+                { en: "What are the signature dishes of this restaurant?", zh: "這間餐廳的招牌菜是什麼？" },
+				{ en: " A table for three, please.", zh: "我們三位"},
+				{ en: " What drink do you have available?", zh: "你們有什麼飲料？"},
+				{ en: " Can we pay separately for our orders?", zh: "我們可以各付各的餐點嗎？"},
+				{ en: " What payment methods do you accept?", zh: "你們接受哪些付款方式？"},
+				{ en: "heck/Bill, please.", zh: "買單" }
             ],
             hotel: [
-				{ en: "Hello, I'd like to check in. I have a reservation under [Your Name]", zh: "雿惩末嚗峕�𤏸�颲衣��乩�譌����𤑳鍂[��滚�㻩閮�鈭�����" },
-				{ en: "Here is my booking confirmation", zh: "�蹱糓��𤑳�閮���蝣箄�滚鱓" },
-				{ en: "I booked through Booking.com, and my reservation number is 9487.", zh: "��烐糓�誯�� Booking.com 閮���嚗諹��鱓蝺刻��糓 9487��" },
-				{ en: "What time is check-out? ", zh: "��������𤘪糓撟暸�痹��" },
-				{ en: "Is there Wi-Fi available in the rooms?", zh: "摰Ｘ��扳�㗇�𣂷�� Wi-Fi ��𠬍��" },
-				{ en: "  What time is breakfast served? ", zh: "�𡟺擗𣂼嗾暺硺�𥟇�㚁��" },
-				{ en: "Excuse me,are there any regulations for using the pool?", zh: "銝滚末�𤩺�嘅�屸�𨀣䲰皜豢陶瘙删�雿輻鍂��匧𪑛鈭𥡝�誩�𡁜��?" },
-                { en: "Can I store my luggage at the hotel after check-out?", zh: "��穃虾隞亙銁����敺�銁憌臬�堒�摮䁅�峕�𤾸�𠬍��" },
-                { en: "Is there a shuttle bus to the Ubud center?", zh: "��㗇𦻖擏�頠𠰴縧�誩�撣�銝剖���𠬍��" },
-                { en: "Could you help me call a taxi or a Grab car?", zh: "�賢鼠��穃㙈閮��贝�𦠜�� Grab ��𠬍��" }
+				{ en: "Hello, I'd like to check in. I have a reservation under [Your Name]", zh: "你好，我要辦理入住。我用[名字]訂了房。" },
+				{ en: "Here is my booking confirmation", zh: "這是我的訂房確認單" },
+				{ en: "I booked through Booking.com, and my reservation number is 9487.", zh: "我是透過 Booking.com 訂的，訂單編號是 9487。" },
+				{ en: "What time is check-out? ", zh: "退房時間是幾點？" },
+				{ en: "Is there Wi-Fi available in the rooms?", zh: "客房內有提供 Wi-Fi 嗎？" },
+				{ en: "  What time is breakfast served? ", zh: "早餐幾點供應？" },
+				{ en: "Excuse me,are there any regulations for using the pool?", zh: "不好意思，關於游泳池的使用有哪些規定嗎?" },
+                { en: "Can I store my luggage at the hotel after check-out?", zh: "我可以在退房後在飯店寄存行李嗎？" },
+                { en: "Is there a shuttle bus to the Ubud center?", zh: "有接駁車去烏布市中心嗎？" },
+                { en: "Could you help me call a taxi or a Grab car?", zh: "能幫我叫計程車或 Grab 嗎？" }
             ]
         };
 
@@ -179,7 +179,7 @@
         function startCategory(key) {
             currentCategory = studyData[key];
             currentIndex = 0;
-            const titles = { charter: "���� ��頠𠰴�滩店", attractions: "��㚰儭� �梢��艶暺�", food: "��㭂 �綫�㵽蝢𡡞��", hotel: "��䕫 憌臬�埈𠯫撣�" };
+            const titles = { charter: "🚐 包車對話", attractions: "🗺️ 熱門景點", food: "🍴 推薦美食", hotel: "🏨 飯店日常" };
             document.getElementById('category-title').innerText = titles[key];
             updateDisplay();
         }
@@ -189,11 +189,11 @@
             const item = currentCategory[currentIndex];
             document.getElementById('english-text').innerText = item.en;
             document.getElementById('chinese-text').innerText = item.zh;
-            document.getElementById('counter-display').innerText = `�脣漲嚗�${currentIndex + 1} / ${currentCategory.length}`;
+            document.getElementById('counter-display').innerText = `進度：${currentIndex + 1} / ${currentCategory.length}`;
             
-            // �凒�鰵�瓲敹��鱓摮埈�鞟內 (蝪∪鱓憿舐內�訜��漤�漤�𧼮鱓摮�)
+            // 更新核心單字提示 (簡單顯示當前重點單字)
             const words = item.en.split(' ').slice(0, 3).join(', ');
-            document.getElementById('vocab-display').innerHTML = `<strong>�𧋦�蘂��漤�痹��</strong> ${item.en.match(/\b[A-Z][a-z]+|entrance|charge|recommendation\b/g)?.join(', ') || '撣貊鍂撠滩店'}`;
+            document.getElementById('vocab-display').innerHTML = `<strong>本句重點：</strong> ${item.en.match(/\b[A-Z][a-z]+|entrance|charge|recommendation\b/g)?.join(', ') || '常用對話'}`;
         }
 
         function nextPhrase() {
